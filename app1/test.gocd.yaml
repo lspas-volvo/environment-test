@@ -16,7 +16,10 @@ pipelines:
         auto_update: true
         branch: master
         whitelist:
-          - 'app1/*'
+          - 'app1/test.*'
+          - 'app1/test-*'
+          - 'app1/test_*'
+          - 'app1/test/*'
     stages:
     - default_stage:
         fetch_materials: true
