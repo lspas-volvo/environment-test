@@ -16,7 +16,10 @@ pipelines:
         auto_update: true
         branch: master
         whitelist:
-          - 'app2/*'
+          - 'app2/prod.*'
+          - 'app2/prod-*'
+          - 'app2/prod_*'
+          - 'app2/prod/*'
     stages:
     - default_stage:
         fetch_materials: true
