@@ -1,4 +1,4 @@
-# Environment State (proof of concept)
+# Environments as code (proof of concept)
 
 The purpose of this repository is to represent current state of apps (versions, configs, etc.) in all environments.
 
