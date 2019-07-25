@@ -1,6 +1,6 @@
 format_version: 3
 environments:
-  test:
+  prod:
     pipelines:
       - app1_prod
 pipelines:
