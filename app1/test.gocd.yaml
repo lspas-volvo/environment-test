@@ -5,7 +5,7 @@ environments:
       - app1_test
 pipelines:
   app1_test:
-    group: test
+    group: app1
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
