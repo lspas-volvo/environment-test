@@ -1,8 +1,10 @@
 format_version: 3
 environments:
-  
+  test:
+    pipelines:
+      - app1_test
 pipelines:
-  hello_github:
+  app1_test:
     group: test
     label_template: ${COUNT}
     lock_behavior: none
