@@ -11,7 +11,7 @@ pipelines:
     display_order: -1
     materials:
       git:
-        git: https://github.com/lspas-volvo/environment-test.git
+        git: https://github.com/lspas-volvo/environments.git
         shallow_clone: true
         auto_update: true
         branch: master
