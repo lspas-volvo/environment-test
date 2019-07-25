@@ -10,7 +10,7 @@ In our PoC we used GoCD as a CD platform that continously monitors this reposito
 
 Our proof of concept uses one central installation of GoCD that manages all environments.
 
-GoCD uses this repository in "Config Repository" setting to continously monitor changes and sync pipelines definitions using "\*\*/\*.gocd.yaml" filter pattern. By doing so we can quickly make changes to the pipelines, add new ones (for testing) or revert changes when needed. We can also restore GoCD state in case of failures quickly using this repo.
+GoCD uses this repository in "Config Repository" setting to continously monitor changes and sync pipelines definitions using ```**/*.gocd.yaml``` filter pattern. By doing so we can quickly make changes to the pipelines, add new ones (for testing) or revert changes when needed. We can also restore GoCD state in case of failures quickly using this repo.
 
 Pipelines are also grouped by ```app name``` and ```environment``` so one can quickly find in GoCD's UI what versions of a given app is deployed in all environments and also find all apps that reached production environment stage.
 
@@ -27,10 +27,10 @@ Adding new environments requires adding an entry in ```environments.gocd.yaml```
 Pipelines are configured to also monitor this repository with proper filters so they get automatically triggered (by GoCD polling mechanism) when something changes.
 
 I.e. when changing, adding or removing a file under ```app1/``` folder only single pipeline for a specific environment of application ```app1``` will be triggered. Which environment pipeline will be triggered is defined by one of the following file name patterns:
-- 'app1/\<environment\>.*'
-- 'app1/\<environment\>-*'
-- 'app1/\<environment\>_*'
-- 'app1/\<environment\>/*'
+- ```app1/<environment>.*```
+- ```app1/<environment>-*```
+- ```app1/<environment>_*```
+- ```app1/<environment>/*```
 
 # TODO
 
