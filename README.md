@@ -12,6 +12,12 @@ GoCD uses this repository in "Config Repository" setting to continously monitor 
 
 Pipelines are also grouped by **app name** and **environment** so one can quickly find in GoCD's UI what versions of a given app is deployed in all environments and also find all apps that reached production environment stage.
 
+# Environments definition
+
+Environments are defined in ```environments.gocd.yaml```. One can define environment variables specific for a given environment that will be made available to all pipelines bound to a given environment (i.e. for making helm releases one could specify kube context ID).
+
+These variables can be overriden inside pipeline definitions if needed.
+
 # Pipelines definition
 
 Pipelines are configured to also monitor this repository with proper filters so they get automatically triggered (by GoCD polling mechanism) when something changes.
