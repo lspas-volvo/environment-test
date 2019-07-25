@@ -1,0 +1,11 @@
+format_version: 3
+environments:
+  test:
+    environment_variables:
+      ENVIRONMENT_URL: https://google.se
+  qa:
+    environment_variables:
+      ENVIRONMENT_URL: https://google.pl
+  prod:
+    environment_variables:
+      ENVIRONMENT_URL: https://google.com
