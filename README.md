@@ -4,7 +4,7 @@ The purpose of this repository is to represent current state of apps (versions, 
 
 The main concept is to store the state in a single place (for all environments) and perform releases and promotions using ```git```. This methodology is often reffered to as ```GitOps```.
 
-In our PoC we used GoCD as a CD platform that continously monitors this repository and updates all environments to always reflect the state stored in this repository for all registered applications. This also includes adding and removing apps from any environment.
+In our PoC we used GoCD as a CD platform that continously monitors this repository and updates all environments to always reflect the state stored in this repository for all registered applications. This also includes adding apps to and removing apps from any environment.
 
 # Setup with GoCD
 
