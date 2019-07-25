@@ -34,7 +34,7 @@ I.e. when changing, adding or removing a file under ```app1/``` folder only sing
 
 # TODO
 
-- Automate adding new apps by using a templates from "_templates" subdirectory.
+- Automate adding new apps by using a templates from ```_templates/``` subdirectory.
 - Change pipelines so they do something useful (helm release) instead of echo.
 - Declare other materials for apps (ECR repo, docker image tag, git repo with the apps source code).
 - Add notifications mechanism so dev teams get notified when GoCD pipeline is completed (with success or failure).
