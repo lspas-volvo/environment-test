@@ -2,6 +2,10 @@
 
 The purpose of this repository is to represent current state of apps (versions, configs, etc.) in all environments.
 
+The main concept is to store the state in a single place (for all environments) and perform releases and promotions using ```git```. This methodology is often reffered to as ```GitOps```.
+
+In our PoC we used GoCD as a CD platform that continously monitors this repository and updates all environments to always reflect the state stored in this repository for all registered applications. This also includes adding and removing apps from any environment.
+
 # Setup with GoCD
 
 GoCD uses this repository in "Config Repository" setting to continously monitor changes and sync pipelines definitions using "\*\*/\*.gocd.yaml" filter pattern. By doing so we can quickly make changes to the pipelines, add new ones (for testing) or revert changes when needed. We can also restore GoCD state in case of failures quickly using this repo.
