@@ -15,10 +15,8 @@ pipelines:
         shallow_clone: true
         auto_update: true
         branch: master
-        invert_filter: true
-        filter:
-          ignore:
-            pattern: 'app2/*'
+        whitelist:
+          - 'app2/*'
     stages:
     - default_stage:
         fetch_materials: true
