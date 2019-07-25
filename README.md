@@ -10,11 +10,13 @@ Pipelines are also grouped by **app name** and **environment** so one can quickl
 
 # Pipelines definition
 
-Pipelines are configured to also monitor this repository with proper filters so they get automatically triggered (by GoCD polling mechanism) when something changes. When changing (also adding and removing) a file under "app1/" folder only single pipeline for a specific environment of that application will be triggered. Which environment pipeline will be triggered is defined by one of the following file name patterns:
-- 'app1/<environment>.*'
-- 'app1/<environment>-*'
-- 'app1/<environment>_*'
-- 'app1/<environment>/*'
+Pipelines are configured to also monitor this repository with proper filters so they get automatically triggered (by GoCD polling mechanism) when something changes.
+
+I.e. when changing, adding or removing a file under ```app1/``` folder only single pipeline for a specific environment of application ```app1``` will be triggered. Which environment pipeline will be triggered is defined by one of the following file name patterns:
+- 'app1/\<environment\>.*'
+- 'app1/\<environment\>-*'
+- 'app1/\<environment\>_*'
+- 'app1/\<environment\>/*'
 
 # TODO
 
