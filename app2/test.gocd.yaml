@@ -1,0 +1,38 @@
+format_version: 3
+environments:
+  test:
+    pipelines:
+      - app2_test
+pipelines:
+  app2_test:
+    group: app2
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git:
+        git: https://github.com/lspas-volvo/environment-test.git
+        shallow_clone: true
+        auto_update: true
+        branch: master
+        invert_filter: true
+        filter:
+          ignore:
+            pattern: 'app2/*'
+    stages:
+    - default_stage:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+        jobs:
+          default_job:
+            timeout: 0
+            elastic_profile_id: demo-app
+            tasks:
+            - exec:
+                arguments:
+                - Hello World
+                command: echo
+                run_if: passed
