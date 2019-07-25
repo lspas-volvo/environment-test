@@ -24,9 +24,9 @@ Adding new environments requires adding an entry in ```environments.gocd.yaml```
 
 # Pipelines definition
 
-Pipelines are configured to also monitor this repository with proper filters so they get automatically triggered (by GoCD polling mechanism) when something changes.
+Also pipelines are configured to monitor (by polling) this repository for changes at paths specific for a given environment and app.
 
-I.e. when changing, adding or removing a file under ```app1/``` folder only single pipeline for a specific environment of application ```app1``` will be triggered. Which environment pipeline will be triggered is defined by one of the following file name patterns:
+I.e. when changing, adding or removing a file under ```app1/``` folder only a single pipeline for a specific environment of the application ```app1``` will be triggered. Which environment pipeline will be triggered is determined by one of the following file name patterns:
 - ```app1/<environment>.*```
 - ```app1/<environment>-*```
 - ```app1/<environment>_*```
