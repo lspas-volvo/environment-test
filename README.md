@@ -8,15 +8,19 @@ In our PoC we used GoCD as a CD platform that continously monitors this reposito
 
 # Setup with GoCD
 
+Our proof of concept uses one central installation of GoCD that manages all environments.
+
 GoCD uses this repository in "Config Repository" setting to continously monitor changes and sync pipelines definitions using "\*\*/\*.gocd.yaml" filter pattern. By doing so we can quickly make changes to the pipelines, add new ones (for testing) or revert changes when needed. We can also restore GoCD state in case of failures quickly using this repo.
 
-Pipelines are also grouped by **app name** and **environment** so one can quickly find in GoCD's UI what versions of a given app is deployed in all environments and also find all apps that reached production environment stage.
+Pipelines are also grouped by ```app name``` and ```environment``` so one can quickly find in GoCD's UI what versions of a given app is deployed in all environments and also find all apps that reached production environment stage.
 
 # Environments definition
 
 Environments are defined in ```environments.gocd.yaml```. One can define environment variables specific for a given environment that will be made available to all pipelines bound to a given environment (i.e. for making helm releases one could specify kube context ID).
 
 These variables can be overriden inside pipeline definitions if needed.
+
+Adding new environments requires adding an entry in ```environments.gocd.yaml``` file and creating pipeline definition files for all apps targeted for that environment.
 
 # Pipelines definition
 
