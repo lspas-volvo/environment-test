@@ -1,20 +1,16 @@
 format_version: 3
 pipelines:
-  app1_test:
+  hello_github:
     group: test
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
     materials:
       git:
-        git: https://github.com/lspas-volvo/environment-test.git
+        git: https://github.com/gocd-contrib/getting-started-repo
         shallow_clone: true
-        auto_update: true
+        auto_update: false
         branch: master
-        invert_filter: true
-        filter:
-          ignore:
-            pattern: 'app1/*'
     stages:
     - default_stage:
         fetch_materials: true
